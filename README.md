@@ -1,4 +1,4 @@
-# jmespath-java
+# jmespath-jruby
 
 [![Build Status](https://travis-ci.org/burtcorp/jmespath-java.png?branch=master)](https://travis-ci.org/burtcorp/jmespath-jruby)
 
