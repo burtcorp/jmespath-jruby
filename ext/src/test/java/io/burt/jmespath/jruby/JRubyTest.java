@@ -17,7 +17,7 @@ public class JRubyTest extends JmesPathRuntimeTest<IRubyObject> {
   protected IRubyObject parse(String json) {
     try {
       return super.parse(json);
-    } catch (Exception e) {
+    } catch (RuntimeException e) {
       if (e.getMessage().contains("unexpected token at '}'") && json.endsWith("}")) {
         // NOTE This is a workaround for a mistake in the jmespath-java tests
         //      one of the tests contains JSON with a trailing } that the other
