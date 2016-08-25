@@ -1,5 +1,8 @@
 language: ruby
-cache: bundler
+cache:
+  bundler: true
+  directories:
+    - $HOME/.m2
 before_script:
   - 'export JRUBY_VERSION=$(ruby --version | perl -n -e \'/jruby (\\S+)/ && print "$1"\')'
 script: '(cd ext && mvn test -Djruby.version=$JRUBY_VERSION) && rake'
