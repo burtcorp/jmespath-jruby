@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.description = 'Fully compliant JMESPath implementation for JRuby based on jmespath-java'
   s.platform = 'java'
 
-  s.files = Dir['lib/**/*.rb', 'lib/**/*.jar', 'README.md']
+  s.files = Dir['lib/**/*.rb', 'lib/**/*.jar', 'README.md', '.yardopts']
 end
