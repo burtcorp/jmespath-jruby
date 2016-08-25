@@ -19,7 +19,7 @@ namespace :extension do
 end
 
 desc 'Run specs'
-RSpec::Core::RakeTask.new
+RSpec::Core::RakeTask.new(:spec)
 
 task :spec => 'extension:install'
 
