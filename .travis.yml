@@ -1,6 +1,8 @@
 language: ruby
 cache: bundler
-script: '(cd ext && mvn test) && rake'
+before_script:
+  - 'export JRUBY_VERSION=$(ruby --version | perl -n -e \'/jruby (\\S+)/ && print "$1"\')'
+script: '(cd ext && mvn test -Djruby.version=$JRUBY_VERSION) && rake'
 rvm:
   - jruby-19mode
   - jruby-9.1.2.0
