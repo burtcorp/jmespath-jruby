@@ -1,0 +1,7 @@
+/.bundle
+/.mvn
+/vendor
+/Gemfile.lock
+/ext/target
+/lib/jmespath/ext
+/tmp
