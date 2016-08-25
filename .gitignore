@@ -1,5 +1,6 @@
 /.bundle
 /.mvn
+/.ruby-version
 /vendor
 /Gemfile.lock
 /ext/target
