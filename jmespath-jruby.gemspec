@@ -5,7 +5,7 @@ $: << File.expand_path('../lib', __FILE__)
 require 'jmespath/version'
 
 Gem::Specification.new do |s|
-  s.name = 'jmespath-java'
+  s.name = 'jmespath-jruby'
   s.version = JmesPath::VERSION
   s.author = 'Theo Hultberg'
   s.email = 'theo@burtcorp.com'
