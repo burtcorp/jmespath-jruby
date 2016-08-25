@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 require 'bundler/setup'
+require 'bundler/gem_helper'
 require 'rspec/core/rake_task'
 
 namespace :extension do
@@ -17,6 +18,12 @@ namespace :extension do
     FileUtils.cp(extension_jar, File.join(extension_dir, 'jmespath.jar'))
   end
 end
+
+namespace :bundler do
+  Bundler::GemHelper.install_tasks
+end
+
+task :release => [:spec, 'extension:install', 'bundler:release']
 
 desc 'Run specs'
 RSpec::Core::RakeTask.new(:spec)
