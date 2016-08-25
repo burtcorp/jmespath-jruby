@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+require 'bundler/setup'
 require 'jars/classpath'
 require 'jars/installer'
 require 'rake/javaextensiontask'
