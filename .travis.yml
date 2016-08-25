@@ -1,0 +1,3 @@
+language: ruby
+cache: bundler
+script: '(cd ext && mvn test) && rake'
