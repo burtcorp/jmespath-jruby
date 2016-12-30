@@ -33,7 +33,11 @@ end
 
 describe JmesPath::Expression do
   let :expression do
-    JmesPath.new.compile(expression_str)
+    JmesPath.new(configuration).compile(expression_str)
+  end
+
+  let :configuration do
+    {}
   end
 
   let :expression_str do
@@ -55,7 +59,7 @@ describe JmesPath::Expression do
       end
 
       it 'raises an error' do
-        expect { expression.search(input) }.to raise_error(JmesPath::ArityError)
+        expect { expression.search(input) }.to raise_error(JmesPath::ParseError)
       end
     end
 
@@ -66,6 +70,16 @@ describe JmesPath::Expression do
 
       it 'raises an error' do
         expect { expression.search(input) }.to raise_error(JmesPath::ArgumentTypeError)
+      end
+
+      context 'and :silent_type_errors is true' do
+        let :configuration do
+          super().merge(:silent_type_errors => true)
+        end
+
+        it 'does not raise any error' do
+          expect { expression.search(input) }.to_not raise_error
+        end
       end
     end
   end

@@ -5,13 +5,13 @@ import org.jruby.runtime.builtin.IRubyObject;
 
 import io.burt.jmespath.JmesPathRuntimeTest;
 import io.burt.jmespath.Adapter;
+import io.burt.jmespath.RuntimeConfiguration;
 
 public class JRubyTest extends JmesPathRuntimeTest<IRubyObject> {
   private static final Ruby ruby = Ruby.newInstance();
-  private final Adapter<IRubyObject> runtime = new JRubyRuntime(ruby);
 
   @Override
-  protected Adapter<IRubyObject> runtime() { return runtime; }
+  protected Adapter<IRubyObject> createRuntime(RuntimeConfiguration configuration) { return new JRubyRuntime(ruby, configuration); }
 
   @Override
   protected IRubyObject parse(String json) {

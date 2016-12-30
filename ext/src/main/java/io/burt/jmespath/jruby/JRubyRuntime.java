@@ -20,11 +20,18 @@ import org.jruby.runtime.builtin.IRubyObject;
 
 import io.burt.jmespath.BaseRuntime;
 import io.burt.jmespath.JmesPathType;
+import io.burt.jmespath.RuntimeConfiguration;
 
 public class JRubyRuntime extends BaseRuntime<IRubyObject> {
   private final Ruby ruby;
 
   public JRubyRuntime(Ruby ruby) {
+    super();
+    this.ruby = ruby;
+  }
+
+  public JRubyRuntime(Ruby ruby, RuntimeConfiguration configuration) {
+    super(configuration);
     this.ruby = ruby;
   }
 
